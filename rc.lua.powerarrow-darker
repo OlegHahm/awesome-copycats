@@ -791,11 +791,18 @@ awful.rules.rules = {
     { rule = { class = "Iron" },
           properties = { tag = tags[1][1] } },
 
-    { rule = { instance = "plugin-container" },
-          properties = { tag = tags[1][1] } },
 
 	  { rule = { class = "Gimp" },
      	    properties = { tag = tags[1][4] } },
+
+    { rule = { instance = "exe" },
+          properties = { floating = true } },
+
+    { rule = { instance = "plugin-container" },
+          properties = { floating = true } },
+
+      { rule = { role = "_NET_WM_STATE_FULLSCREEN" },
+        properties = { floating = true } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized_horizontal = true,
